@@ -1,0 +1,7 @@
+Before run the script, you have to install the following packages.
+
+1. numpy 1.10(https://pypi.org/project/numpy/#files)
+2. OpenCV(https://pypi.org/project/opencv-python/3.4.1.15/#files)
+3. Scipy(https://pypi.org/project/scipy/#files)
+4. Keras(https://pypi.org/project/Keras/)
+
