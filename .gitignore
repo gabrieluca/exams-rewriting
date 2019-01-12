@@ -1,4 +1,10 @@
+# Extension Files
 *.pyc
 
+# Folders
 setup/
 venv/
+
+# Especific Files
+from_freelancers/1 - Van Ngo 3-11-18/~$torial.docx
+from_freelancers/2 - Van Ngo 24-12-18/Training digits/~$aining_Tuturial.docx
