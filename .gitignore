@@ -3,7 +3,8 @@
 
 # Folders
 setup/
-venv/
+venv_cpu/
+venv_gpu/
 
 # Especific Files
 from_freelancers/1 - Van Ngo 3-11-18/~$torial.docx
