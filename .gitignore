@@ -5,6 +5,7 @@
 setup/
 venv_cpu/
 venv_gpu/
+venv_cpu(note)/
 
 # Especific Files
 from_freelancers/1 - Van Ngo 3-11-18/~$torial.docx
