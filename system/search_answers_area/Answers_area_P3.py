@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("database_files/exams/NM7510_P3_B_2019_2/NM7510_P3_pacote_B_2_sem_2019-54.png",1) 
+img = cv2.imread("database_files/exams/NM7510_P3_B_2019_2/NM7510_P3_pacote_B_2_sem_2019-53.png",1) 
 
 template = cv2.imread('database_files/track_markers/template3.png',cv2.IMREAD_GRAYSCALE)
 
@@ -33,7 +33,7 @@ def main():
         img3 = cv2.cvtColor(img3, cv2.COLOR_BGR2GRAY)
 
         # Normalize and threshold image
-        res, im = cv2.threshold(img3, 165, 255, cv2.THRESH_BINARY_INV)
+        res, im = cv2.threshold(img3, 166, 255, cv2.THRESH_BINARY_INV)
 
         # Fill everything that is the same colour (black) as top-left corner with white
         cv2.floodFill(im, None, (0, 0), 255)
@@ -45,15 +45,15 @@ def main():
 
         cv2.imshow("Quadro respostas:", img2)
 
-        cv2.imshow("a)", imgFI[0:60,])
+        cv2.imshow("a)", imgFI[0:65,])
         cv2.waitKey(0)
-        cv2.imshow("b)", imgFI[55:120,])
+        cv2.imshow("b)", imgFI[65:130,])
         cv2.waitKey(0)
-        cv2.imshow("c)", imgFI[115:190,])
+        cv2.imshow("c)", imgFI[125:195,])
         cv2.waitKey(0)
-        cv2.imshow("d)", imgFI[185:260,])
+        cv2.imshow("d)", imgFI[195:264,])
         cv2.waitKey(0)
-        cv2.imshow("e)", imgFI[250:,])
+        cv2.imshow("e)", imgFI[264:,])
         cv2.waitKey(0)
         cv2.destroyAllWindows()
     else: 
@@ -64,7 +64,7 @@ def main():
             img3 = cv2.cvtColor(img3, cv2.COLOR_BGR2GRAY)
 
             # Normalize and threshold image
-            res, im = cv2.threshold(img3, 165, 255, cv2.THRESH_BINARY_INV)
+            res, im = cv2.threshold(img3, 175, 255, cv2.THRESH_BINARY_INV)
 
             # Fill everything that is the same colour (black) as top-left corner with white
             cv2.floodFill(im, None, (0, 0), 255)
@@ -77,15 +77,15 @@ def main():
             cv2.imshow("Quadro respostas:", img2)
             cv2.imshow("img3", img3)
 
-            cv2.imshow("a1)", imgFI[0:60,90:240])
+            cv2.imshow("a1)", imgFI[0:63,90:240])
             cv2.waitKey(0)
-            cv2.imshow("a2)", imgFI[0:57,240:])
+            cv2.imshow("a2)", imgFI[0:63,240:])
             cv2.waitKey(0)
-            cv2.imshow("b)", imgFI[55:110,240:])
+            cv2.imshow("b)", imgFI[63:118,240:])
             cv2.waitKey(0)
-            cv2.imshow("c)", imgFI[110:165,240:])
+            cv2.imshow("c)", imgFI[119:180,240:])
             cv2.waitKey(0)
-            cv2.imshow("d)", imgFI[160:225,240:])
+            cv2.imshow("d)", imgFI[180:225,240:])
             cv2.waitKey(0)
             cv2.imshow("e)", imgFI[225:,240:])
             cv2.waitKey(0)
@@ -97,7 +97,7 @@ def main():
             img3 = cv2.cvtColor(img3, cv2.COLOR_BGR2GRAY)
 
             # Normalize and threshold image
-            res, im = cv2.threshold(img3, 165, 255, cv2.THRESH_BINARY_INV)
+            res, im = cv2.threshold(img3, 185, 255, cv2.THRESH_BINARY_INV)
 
             # Fill everything that is the same colour (black) as top-left corner with white
             cv2.floodFill(im, None, (0, 0), 255)
