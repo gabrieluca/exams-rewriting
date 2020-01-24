@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("database_files/exams/NM7510_P3_2019_2/NM7510_P3_pacote_A_2_sem_2019-04.png",1) 
+img = cv2.imread("database_files/exams/NM7510_P3_2019_2/NM7510_P3_pacote_A_2_sem_2019-01.png",1) 
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 template = cv2.imread('database_files/track_markers/template3.png',cv2.IMREAD_GRAYSCALE)
@@ -96,6 +96,8 @@ elif m2y>m1y:
     rows, cols, j = img.shape
     M = cv2.getRotationMatrix2D((cols//2,rows//2),arc,1)
     imgf = cv2.warpAffine(img,M,(cols,rows))
+elif m1y == m2y:
+    imgf = img
 
 if m7y>m8y:
     dy2 = m7y-m8y
@@ -115,6 +117,8 @@ elif m8y>m7y:
     rows, cols, j = img.shape
     M = cv2.getRotationMatrix2D((cols//2,rows//2),arc2,1)
     imgf2 = cv2.warpAffine(img,M,(cols,rows))
+elif m8y == m7y:
+    imgf2 = img
 
 img1 = imgf[ min(ly1, key=int)+int(h/2): max(ly1, key=int),  min(lx1, key=int)+int(w/1.5): max(lx1, key=int)+int(w/3.5)]
 img2 = imgf2[ min(ly2, key=int)+int(h/2): max(ly2, key=int)+int(h/2),  min(lx2, key=int)+int(w/2): max(lx2, key=int)+int(w/2)]
