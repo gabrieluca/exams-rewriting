@@ -3,14 +3,14 @@ import numpy as np
 
 from Normalize_and_crop import normalize_crop
 
-img = cv2.imread("database_files/exams/NM7510_P3_B_2019_2/NM7510_P3_pacote_B_2_sem_2019-53.png",1) 
+img = cv2.imread("database_files/exams/NM7510_P3_A_2019_2/NM7510_P3_pacote_A_2_sem_2019-37.png",1) 
 template = cv2.imread('database_files/track_markers/template.png',cv2.IMREAD_GRAYSCALE)
 template2 = cv2.imread('database_files/track_markers/template2.png',cv2.IMREAD_GRAYSCALE)
 
 def main():
     img1, img2 = normalize_crop(img,template,template2)
-    img_qdr = img2[1760:2180, 790:1710]
-    img_res = img_qdr[65:365, 105:590]
+    img_qdr = img2[1815:2155, 790:1466]
+    img_res = img_qdr[:, 105:570]
     img_res = cv2.cvtColor(img_res, cv2.COLOR_BGR2GRAY)
 
     # Normalize and threshold image
@@ -25,16 +25,19 @@ def main():
     imgFI = cv2.bitwise_not(im)
 
     cv2.imshow("Quadro respostas:", img_qdr)
+    cv2.imshow("respostas:", img_res)
 
-    cv2.imshow("a)", imgFI[0:65,])
+    cv2.imshow("a1)", imgFI[0:110,50:232])
     cv2.waitKey(0)
-    cv2.imshow("b)", imgFI[65:130,])
+    cv2.imshow("a2)", imgFI[0:110,232:])
     cv2.waitKey(0)
-    cv2.imshow("c)", imgFI[125:195,])
+    cv2.imshow("b)", imgFI[110:165,232:])
     cv2.waitKey(0)
-    cv2.imshow("d)", imgFI[195:264,])
+    cv2.imshow("c)", imgFI[165:215,232:])
     cv2.waitKey(0)
-    cv2.imshow("e)", imgFI[264:,])
+    cv2.imshow("d)", imgFI[220:270,232:])
+    cv2.waitKey(0)
+    cv2.imshow("e)", imgFI[270:,232:])
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
