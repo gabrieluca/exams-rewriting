@@ -24,6 +24,7 @@ def main():
     for pt in zip(*loc2[::-1]):
         cv2.rectangle(img, pt, (pt[0] + r, pt[1] + f), (0, 255, 0), 3)
 
+    
     print('{0}, {1}, {2}, {3}'.format(pt[0],pt[1],rt[0],rt[1]))
 
     if pt[0]>1600:
