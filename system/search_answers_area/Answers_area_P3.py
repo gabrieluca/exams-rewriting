@@ -37,11 +37,14 @@ def main():
             temp[output == j + 1] = 255
     temp = cv2.bitwise_not(temp)
 
+    # Find contours
     im2, contours, hierarchy = cv2.findContours(temp, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
+    # List the names for each contour
     questoes = ['e)','d)','c)','b)','a)','a2)']
     f=0
 
+    #for each contour analize if it has the min shape and crop the final image
     for c in contours:
         x,y,w,h = cv2.boundingRect(c)
         resp = im[ y : y+h , x : x+w ]
