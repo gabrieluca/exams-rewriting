@@ -5,7 +5,7 @@ import numpy as np
 from Normalize_and_crop import normalize_crop
 from P3_par_contornos import main_par
 
-path = "database_files/exams/NM7510_P3_A_2019_2/NM7510_P3_pacote_A_2_sem_2019-08.png"
+path = "database_files/exams/NM7510_P3_B_2019_2/NM7510_P3_pacote_B_2_sem_2019-54.png"
 template = cv2.imread('database_files/track_markers/template.png',cv2.IMREAD_GRAYSCALE)
 template2 = cv2.imread('database_files/track_markers/template2.png',cv2.IMREAD_GRAYSCALE)
 img = cv2.imread(path,1)
@@ -19,7 +19,7 @@ p = int(path[70:72]) % 2
 
 def main_impar():
     img1, img2 = normalize_crop(img,template,template2)
-    img_qdri = img2[1815:2133, 790:1466]
+    img_qdri = img2[1815:2149, 790:1466]
     ares1 = img1[1591:,:]
     ares2 = img2[23:2130,20:1465]
     img_res = img_qdri[:, 285:570]
@@ -76,6 +76,7 @@ def main_impar():
     questoes = ['e','d','c','b','a']
     f=0
 
+    cv2.imshow("quadro respostas",img_qdri)
     #for each contour analize if it has the min shape and crop the final image
     for c in contours:
         x,y,w,h = cv2.boundingRect(c)

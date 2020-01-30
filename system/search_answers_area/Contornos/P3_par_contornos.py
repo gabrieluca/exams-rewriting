@@ -6,7 +6,7 @@ from Normalize_and_crop import normalize_crop
 
 def main_par(img,template,template2,Exam_pack,Page_number):
     img1, img2 = normalize_crop(img,template,template2)
-    img_qdrp = img2[1870:2153, 790:1480]
+    img_qdrp = img2[1855:2159, 790:1480]
     ares1 = img1[1458:2138,5:1460]
     ares2 = img2[23:2150,19:1470]
     img_res = img_qdrp[:, 105:570]
@@ -65,6 +65,7 @@ def main_par(img,template,template2,Exam_pack,Page_number):
     questoes = ['e','d','c','b','a']
     f=0
 
+    cv2.imshow("Quadro respostas",img_qdrp)
     #for each contour analize if it has the min shape and crop the final image
     for c in contours:
         x,y,w,h = cv2.boundingRect(c)
@@ -88,7 +89,7 @@ def main_par(img,template,template2,Exam_pack,Page_number):
 
     imgFI = cv2.bitwise_not(im)
 
-    cv2.imshow("a2({0})".format(Page_number), imgFI[:55,50:232])
+    cv2.imshow("a2({0})".format(Page_number), imgFI[:65,50:232])
     cv2.imwrite(os.path.join(path, 'a2({0}).png'.format(Page_number)), imgFI[:55,50:232])
     cv2.waitKey(0)
     cv2.destroyAllWindows()
