@@ -4,7 +4,7 @@ import numpy as np
 img = cv2.imread("database_files/exams/NM7510_P3_C_2019_2/NM7510_P3_pacote_C_2_sem_2019-01.png",1) 
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-template = cv2.imread('database_files/track_markers/template1.png',cv2.IMREAD_GRAYSCALE)
+template = cv2.imread('database_files/track_markers/template.png',cv2.IMREAD_GRAYSCALE)
 w, h = template.shape[::-1]
 
 result = cv2.matchTemplate(gray_img, template, cv2.TM_CCOEFF_NORMED)
