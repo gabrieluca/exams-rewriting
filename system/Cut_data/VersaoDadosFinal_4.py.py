@@ -3,14 +3,14 @@ import numpy as np
 
 from Normalize_and_crop import normalize_crop
 
-img = cv2.imread("database_files/exams/NM7510_P3_B_2019_2/NM7510_P3_pacote_B_2_sem_2019-23.png",1) 
+img = cv2.imread("database_files/exams/NM7510_P3_C_2019_2/NM7510_P3_pacote_C_2_sem_2019-34.png",1) 
 template = cv2.imread('database_files/track_markers/template.png',cv2.IMREAD_GRAYSCALE)
 template2 = cv2.imread('database_files/track_markers/template2.png',cv2.IMREAD_GRAYSCALE)
 
 def main():
  
     img1, img2 = normalize_crop(img,template,template2)
-    img_qdr = img1[0:300, 5:1900]
+    img_qdr = img1[8:300, 8:1900]
     img_res = img_qdr[5:500, 40:1900]
     img_res = cv2.cvtColor(img_res, cv2.COLOR_BGR2GRAY)
 
@@ -61,7 +61,7 @@ def main():
     cv2.waitKey(0)
 
     #img1, img2 = normalize_crop(img,template,template2)
-    img_qdr = img1[174:280, 0:1900] #Nome e ass
+    img_qdr = img1[182:280, 5:1900] #Nome e ass
     img_res = img_qdr[5:500, 40:1900]
     img_res = cv2.cvtColor(img_res, cv2.COLOR_BGR2GRAY)
 
@@ -81,14 +81,15 @@ def main():
     im = cv2.dilate(im, kernel, iterations=1)
 
 
-    img_qdr = cv2.resize(img_qdr, (900, 120))  
-    cv2.imshow("Dados do cabecalho:", img_qdr)
+    #img_qdr = cv2.resize(img_qdr, (900, 120))  
+    #cv2.imshow("Dados do cabecalho:", img_qdr)
 
-    cv2.imshow("Nome)", imgFI[0:280,80:670])
+    cv2.imshow("Nome)", imgFI[3:280,80:660
+    ])
     cv2.waitKey(0)
 
     #img1, img2 = normalize_crop(img,template,template2)
-    img_qdr = img1[174:280, 697:1900] #Nome e ass
+    img_qdr = img1[180:280, 697:1900] #Nome e ass
     img_res = img_qdr[5:500, 40:1900]
     img_res = cv2.cvtColor(img_res, cv2.COLOR_BGR2GRAY)
 
@@ -107,8 +108,8 @@ def main():
     kernel = np.ones((2, 2), np.uint8)
     im = cv2.dilate(im, kernel, iterations=1)
     
-    img_qdr = cv2.resize(img_qdr, (800, 200))
-    cv2.imshow("Dados do cabecalho:", img_qdr)
+    #img_qdr = cv2.resize(img_qdr, (800, 200))
+    #cv2.imshow("Dados do cabecalho:", img_qdr)
 
     cv2.imshow("Assinatura)", imgFI[0:280,100:1900])
     cv2.waitKey(0)
